@@ -1,5 +1,3 @@
-// Flo php bootcamp 1. ödev
-// Caner KOSKOS
 <?php
     
     $agilSayisi = 5;
