@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    .button{
+        text-align:center;
+    }
+</style>
 </head>
 <body>
     <form action="kaydet.php" method="post" style="text-align:center;">
@@ -16,6 +21,10 @@
         <br><br>
         <button style="background-color:powderblue" type="submit">Bilgileri Kaydet</button>
     </form>
-    <br><br><br><button style="margin-left: 708px;background-color:powderblue"onclick="document.location='listele.php'">Kayıtları Listele</button>
+    <br><br><br>
+    <div class="button">
+        <button onclick="document.location='listele.php'">Kayıtları Listele</button>   
+    </div>
+    
 </body>
 </html>

@@ -5,23 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
     <?php 
-
-    $baglan = new PDO("mysql:host=localhost;dbname=odev3;charset=utf8","root","");
-    $baglan->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    include_once("baglanti.php");
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
     $sorgu = $baglan->prepare("insert into rehber values(?,?,?)");
-    $ekle = $sorgu->execute(array(NULL,"$_POST[name]","$_POST[phone]"));
 
-    if ($ekle){
-        echo'<script> window.location="index.php"; </script> ';
+    if ($name != "" || $phone != ""){
+
+        $ekle = $sorgu->execute(array(NULL,$name,$phone));
+
+        if ($ekle){
+            echo "<script> alert('Bilgiler Kaydedildi!!') 
+                    window.top.location = 'index.php'
+                </script>";  
+        }
     }
-
+    else {       
+        echo "<script> alert('Lütfen Bilgilerinizi Kontrol Ediniz!') 
+                    window.top.location = 'index.php'
+            </script>";
+    }
     ?>
-
-    <button onclick="document.location='listele.php'">Listele</button>
 </body>
 </html>
 

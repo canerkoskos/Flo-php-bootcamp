@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 <style>
     table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
     }
+    .button{
+        text-align:center;
+        
+    }
 </style>
+</style>
+</head>
 <body>
     <table style="width:100%">
         <tr>
@@ -21,8 +26,7 @@
         </tr>
         <?php 
 
-        $baglan = new PDO("mysql:host=localhost;dbname=odev3;charset=utf8","root","");
-        $baglan->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        include_once("baglanti.php");
 
         $sorgu = $baglan->query("SELECT * FROM rehber", PDO::FETCH_ASSOC);
         foreach($sorgu as $row){
@@ -43,6 +47,10 @@
 
         ?>
     </table>
-    <br><br><br><button style="margin-left: 710px;background-color:powderblue"onclick="document.location='index.php'">Yeni Kayıt</button>
+    <br><br><br>
+    <div class="button">
+        <button onclick="document.location='index.php'">Yeni Kayıt</button>
+    </div>
+    
 </body>
 </html>
