@@ -12,4 +12,3 @@ geriye kalan sayının 10ʹa göre modu 10. haneye eşittir.<br>
 
 ![Ekran görüntüsü 2022-11-26 133105](https://user-images.githubusercontent.com/117185732/204084539-a5d4566a-367c-42ce-bdbc-93eecf59c4c2.png)
 
-![hafta4 1](https://user-images.githubusercontent.com/117185732/204085126-b613ea22-ecef-4ff9-bceb-1183c551a68b.png)
