@@ -22,10 +22,8 @@
 
             $durum = "";
             $metin = "";         
-            $tekler = "";
-            $ciftler = "";
-            $tekToplam = 0;
-            $ciftToplam = 0;
+            $tekler = 0;
+            $ciftler = 0;
             $kontrol1 = true;
 
             for( $i = 0; $i<strlen($tckimlik); $i++ ){
@@ -34,7 +32,6 @@
                     break;
                 }
             }
-
             if( strlen($tckimlik) != 11 || $tckimlik[0] == 0 || $kontrol1 == false){
                 $metin = "Geçersiz Bilgi Girişi, Kayıt Edilemedi !!";
             }
@@ -42,26 +39,18 @@
                 
                 for($i=1; $i<=9; $i++){
                     if( $i % 2 == 0 ){
-                        $ciftler .= $tckimlik[$i];
+                        $ciftler += intval($tckimlik[$i-1]);
                     }
                     else{
-                        $tekler .= $tckimlik[$i];
+                        $tekler += intval($tckimlik[$i-1]);
                     }
-                }
-                for( $i=0; $i < strlen($ciftler); $i++ ){
+                }                
+                $temp = (($tekler * 7) - $ciftler) % 10;
+                if( $temp == intval($tckimlik[9])){
 
-                    $ciftToplam += intval($ciftler[$i]);
-                }
-                for( $i=0; $i < strlen($tekler); $i++ ){
-
-                    $tekToplam += intval($tekler[$i]);
-                }
-                $temp = (($tekToplam * 7) - $ciftToplam) % 10;
-                if( $temp == $tckimlik[9] ){
-
-                    $temp2 = ($tekToplam + $ciftToplam + $tckimlik[9]) % 10;
+                    $temp2 = ($tekler + $ciftler + intval($tckimlik[9])) % 10;
                     
-                    if($temp2 == $tckimlik[10]){
+                    if($temp2 == intval($tckimlik[10])){
                         $durum = "TC Kimlik Geçerli";
                     }
                     else{
