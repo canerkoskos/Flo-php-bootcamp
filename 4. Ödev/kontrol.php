@@ -25,6 +25,7 @@
             $tekler = 0;
             $ciftler = 0;
             $kontrol1 = true;
+            $kontrol2 = true;
 
             for( $i = 0; $i<strlen($tckimlik); $i++ ){
                 if( !is_numeric ($tckimlik[$i]) ){
@@ -32,7 +33,19 @@
                     break;
                 }
             }
-            if( strlen($tckimlik) != 11 || $tckimlik[0] == 0 || $kontrol1 == false){
+            if($kontrol1 == true){
+                for( $i = 0; $i<strlen($tckimlik)-2; $i++ ){
+                    if($tckimlik[$i] == $tckimlik[$i+1]){
+                        $kontrol2 = false;
+                    }
+                    else{
+                        $kontrol2 = true;
+                        break;
+                    }
+
+                }
+            }
+            if( strlen($tckimlik) != 11 || $tckimlik[0] == 0 || $kontrol1 == false || $kontrol2 == false){
                 $metin = "Geçersiz Bilgi Girişi, Kayıt Edilemedi !!";
             }
             else{
@@ -51,6 +64,8 @@
                     $temp2 = ($tekler + $ciftler + intval($tckimlik[9])) % 10;
                     
                     if($temp2 == intval($tckimlik[10])){
+
+
                         $durum = "TC Kimlik Geçerli";
                     }
                     else{
