@@ -1,8 +1,8 @@
 Flo PHP Bootcamp 4. Hafta Ödevi 
 
-Bir formdan gelen Ad Soyad ve TC Kimlik numarası verisini veritabanına kaydeden bir uygulama hazırla.
-Veritabanına kayıt etmeden önce TC Kimlik numarasını aşağıdaki kurallara göre bir Class içerisinde 
-doğrula ve sonucu da diğer bilgilerle birlikte veritabanına kaydet.
+Bir formdan gelen Ad Soyad ve TC Kimlik numarası verisini veritabanına kaydeden bir uygulama hazırlanacak.
+Veritabanına kayıt etmeden önce TC Kimlik numarası aşağıdaki kurallara göre bir Class içerisinde 
+doğrulanıp ve sonucu da diğer bilgilerle birlikte veritabanına kaydedilecek.
 
 (1) TC kimlik numaraları 11 hanelidir ve her hanesi rakamsal değerdedir.<br>
 (2) İlk hane hiçbir zaman 0 olamaz.<br>
