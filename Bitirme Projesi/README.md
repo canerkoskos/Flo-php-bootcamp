@@ -1,1 +1,3 @@
+Öğrenci Yönetim Sistemi
+
 
